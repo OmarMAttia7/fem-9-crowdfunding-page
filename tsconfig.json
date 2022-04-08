@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "removeComments": true,
+    "preserveConstEnums": false,
+    "outDir": "./dist/",
+    "jsx": "preserve",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports" : true,
+    "esModuleInterop" : true,
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*", "index.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
