@@ -4,6 +4,7 @@ import Loading from "../../Components/Loading"
 let Intro = React.lazy(() => import("./Intro"));
 let Stats = React.lazy(() => import("./Stats"));
 let About = React.lazy(() => import("./About"));
+let Rewards = React.lazy(() => import("./Rewards"));
 export default function Main(){
   return (
   <main className="my-36">
@@ -22,6 +23,7 @@ export default function Main(){
     <Section>
       <Suspense fallback={<Loading p="p-10" />}>
         <About />
+        <Rewards />
       </Suspense>
     </Section>
   </main>
