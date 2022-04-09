@@ -12,7 +12,6 @@ class Navbar extends React.Component<{}, { navExpanded: boolean }> {
     super(props);
     this.state = { navExpanded: false };
     this.toggleNav = this.toggleNav.bind(this);
-    this.navBtnRef = React.createRef();
   }
 
   toggleNav() {
@@ -29,7 +28,6 @@ class Navbar extends React.Component<{}, { navExpanded: boolean }> {
             id="nav-btn"
             aria-expanded={this.state.navExpanded}
             aria-haspopup="true"
-            ref={this.navBtnRef}
             className={`h-4 w-4 bg-cover bg-no-repeat bg-center bg-nav-open group-focus-within:bg-nav-close`}
           >
 
