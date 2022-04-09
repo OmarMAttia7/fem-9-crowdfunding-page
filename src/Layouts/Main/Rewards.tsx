@@ -1,85 +1,84 @@
 import React from "react";
+import Reward from "./Components/Reward";
+
+export interface RewardType {
+  title: string,
+  description: string,
+  pledgeAmount: number,
+  rewardsLeft: number
+}
+
+let rewardsData: RewardType[] = [
+  {
+    title: "Bamboo Stand",
+    description:
+      "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
+    pledgeAmount: 25,
+    rewardsLeft: 101,
+  },
+  {
+    title: "Black Edition Stand",
+    description: "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+    pledgeAmount: 75,
+    rewardsLeft: 64
+  },
+  {
+    title: "Mahogany Special Edition",
+    description: "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+    pledgeAmount: 200,
+    rewardsLeft: 0
+  }
+];
+
 export default class Rewards extends React.Component {
   render() {
     return (
       <>
-        Bamboo Stand
-        Pledge $25 or more
-        You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
-        you’ll be added to a special Backer member list.
-        101 left
-        Select Reward
-
-        Black Edition Stand
-        Pledge $75 or more
-        You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
-        member list. Shipping is included.
-        64 left
-        Select Reward
-
-        Mahogany Special Edition
-        Pledge $200 or more
-        You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
-        to our Backer member list. Shipping is included.
-        0 left
-        Out of Stock
-
+        {rewardsData.map((reward, index) => {
+          return (
+            <Reward
+              title={reward.title}
+              description={reward.description}
+              pledgeAmount={reward.pledgeAmount}
+              rewardsLeft={reward.rewardsLeft}
+              rewardId = {index}
+              key = {index}
+              outOfStock = {reward.rewardsLeft ? false : true}
+            ></Reward>
+          );
+        })}
         {/*<!-- Selection modal start -->*/}
-
-        Back this project
-        Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-
-        Pledge with no reward
-        Choose to support us without a reward if you simply believe in our project. As a backer, 
-        you will be signed up to receive product updates via email.
-
-        Bamboo Stand
-        Pledge $25 or more
-        You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-        you’ll be added to a special Backer member list.
-        101 left
-
+        Back this project Want to support us in bringing Mastercraft Bamboo
+        Monitor Riser out in the world? Pledge with no reward Choose to support
+        us without a reward if you simply believe in our project. As a backer,
+        you will be signed up to receive product updates via email. Bamboo Stand
+        Pledge $25 or more You get an ergonomic stand made of natural bamboo.
+        You've helped us launch our promotional campaign, and you’ll be added to
+        a special Backer member list. 101 left
         {/*<!-- Selected pledge start -->*/}
-        Enter your pledge
-        $25
-        Continue
+        Enter your pledge $25 Continue
         {/*<!-- Selected pledge end -->*/}
-
-        Black Edition Stand
-        Pledge $75 or more
-        You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-        member list. Shipping is included.
-        64 left
-
+        Black Edition Stand Pledge $75 or more You get a Black Special Edition
+        computer stand and a personal thank you. You’ll be added to our Backer
+        member list. Shipping is included. 64 left
         {/* <!-- Selected pledge start --> */}
-        Enter your pledge
-        $75
-        Continue
+        Enter your pledge $75 Continue
         {/* <!-- Selected pledge end --> */}
-
-        Mahogany Special Edition
-        Pledge $200 or more
-        You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-        to our Backer member list. Shipping is included.
-        0 left
-
+        Mahogany Special Edition Pledge $200 or more You get two Special Edition
+        Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be
+        added to our Backer member list. Shipping is included. 0 left
         {/* <!-- Selected pledge  start --> */}
-        Enter your pledge
-        $200
-        Continue
+        Enter your pledge $200 Continue
         {/* <!-- Selected pledge end -->
 
         <!-- Selection modal end -->
 
         <!-- Success modal start --> */}
-
-        Thanks for your support!
-        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-        an email once our campaign is completed.
-        Got it!
-
+        Thanks for your support! Your pledge brings us one step closer to
+        sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an
+        email once our campaign is completed. Got it!
         {/* <!-- Success modal end --> */}
       </>
-    )
+    );
   }
 }
