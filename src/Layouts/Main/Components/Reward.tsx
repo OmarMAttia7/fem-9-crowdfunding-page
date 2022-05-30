@@ -22,7 +22,7 @@ export default class Reward extends React.Component<Props, {}> {
         <p className="text-cyan text-sm mb-4">Pledge {this.props.pledgeAmount}$ or more</p>
         <P>{this.props.description}</P>
         <P className="mb-6 mt-6 flex items-center"><span className="font-bold text-3xl text-black mr-2">{this.props.rewardsLeft}</span> left</P>
-        <Button>Select Reward</Button>
+        <Button>Select <span className="sr-only">{this.props.title}</span> Reward</Button>
       </section>
     )
 

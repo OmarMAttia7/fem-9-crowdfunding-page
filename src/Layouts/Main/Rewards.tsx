@@ -2,10 +2,10 @@ import React from "react";
 import Reward from "./Components/Reward";
 
 export interface RewardType {
-  title: string,
-  description: string,
-  pledgeAmount: number,
-  rewardsLeft: number
+  title: string;
+  description: string;
+  pledgeAmount: number;
+  rewardsLeft: number;
 }
 
 let rewardsData: RewardType[] = [
@@ -18,16 +18,18 @@ let rewardsData: RewardType[] = [
   },
   {
     title: "Black Edition Stand",
-    description: "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+    description:
+      "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
     pledgeAmount: 75,
-    rewardsLeft: 64
+    rewardsLeft: 64,
   },
   {
     title: "Mahogany Special Edition",
-    description: "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+    description:
+      "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
     pledgeAmount: 200,
-    rewardsLeft: 0
-  }
+    rewardsLeft: 0,
+  },
 ];
 
 export default class Rewards extends React.Component {
@@ -41,9 +43,9 @@ export default class Rewards extends React.Component {
               description={reward.description}
               pledgeAmount={reward.pledgeAmount}
               rewardsLeft={reward.rewardsLeft}
-              rewardId = {index}
-              key = {index}
-              outOfStock = {reward.rewardsLeft ? false : true}
+              rewardId={index}
+              key={index}
+              outOfStock={reward.rewardsLeft ? false : true}
             ></Reward>
           );
         })}

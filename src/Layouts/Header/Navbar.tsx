@@ -30,7 +30,7 @@ class Navbar extends React.Component<{}, { navExpanded: boolean }> {
             aria-haspopup="true"
             className={`h-4 w-4 bg-cover bg-no-repeat bg-center bg-nav-open group-focus-within:bg-nav-close`}
           >
-
+            <p className="sr-only">Show Navigation</p>
           </button>
 
           <ul
